@@ -8,7 +8,7 @@ export default function ArticleCard({
   comment_count,
 }) {
   return (
-    <section>
+    <section className="articlecard">
       <p>ID: {article_id}</p>
       <h2>{title}</h2>
       <p>Topic: {topic}</p>
