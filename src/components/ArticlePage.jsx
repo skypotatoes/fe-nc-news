@@ -8,6 +8,7 @@ export default function ArticlePage() {
   const [article, setArticle] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+
   useEffect(() => {
     setError(null)
     setIsLoading(true)
@@ -28,6 +29,7 @@ export default function ArticlePage() {
         },
       )
   }, [article_id])
+  console.log(error)
   if (isLoading) return <h2>Loading...</h2>
   if (error) return <ErrorPage status={error.status} msg={error.msg} />
   return (
