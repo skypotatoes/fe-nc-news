@@ -8,14 +8,16 @@ export default function ArticleCard({
   comment_count,
 }) {
   return (
-    <section className="articlecard">
-      <p>ID: {article_id}</p>
+    <li className="articlecard">
       <h2>{title}</h2>
-      <p>Topic: {topic}</p>
-      <p>Author: {author}</p>
-      <p>Created: {created_at}</p>
-      <p>Votes: {votes}</p>
-      <p>This article has {comment_count} comments</p>
-    </section>
+      <dl>
+        <dt>ID: {article_id}</dt>
+        <dt>Topic: {topic}</dt>
+        <dt>Author: {author}</dt>
+        <dt>Created: {created_at}</dt>
+        <dt>Votes: {votes}</dt>
+        <dt>This article has {comment_count} comments</dt>
+      </dl>
+    </li>
   )
 }
