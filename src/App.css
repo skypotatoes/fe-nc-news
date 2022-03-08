@@ -14,6 +14,20 @@
   border-radius: 20px;
 }
 
+.article {
+  width: 50%;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: palegoldenrod;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.article-body {
+  text-align: justify;
+}
+
 .topicslink {
   margin: 10px;
   color: darkblue;

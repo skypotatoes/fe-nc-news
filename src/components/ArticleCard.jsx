@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function ArticleCard({
   article_id,
   title,
@@ -8,6 +10,7 @@ export default function ArticleCard({
   comment_count,
 }) {
   return (
+
     <li className="articlecard">
       <h2>{title}</h2>
       <dl>
