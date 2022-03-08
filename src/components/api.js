@@ -15,9 +15,3 @@ export const getTopics = () => {
     return data.topics
   })
 }
-
-export const getTopics = () => {
-  return axios.get(`${baseURL}/topics`).then(({ data }) => {
-    return data.topics
-  })
-}
