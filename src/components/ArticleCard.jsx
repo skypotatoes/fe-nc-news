@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function ArticleCard({
   article_id,
   title,
@@ -10,7 +12,9 @@ export default function ArticleCard({
   return (
     <section className="articlecard">
       <p>ID: {article_id}</p>
-      <h2>{title}</h2>
+      <h2>
+        <Link to={`/articles/${article_id}`}>{title}</Link>
+      </h2>
       <p>Topic: {topic}</p>
       <p>Author: {author}</p>
       <p>Created: {created_at}</p>

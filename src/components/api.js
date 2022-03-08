@@ -13,3 +13,4 @@ export const getTopics = () => {
     return data.topics
   })
 }
+export const getSingleArticle = () => {}
