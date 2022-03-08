@@ -10,9 +10,10 @@ export default function ArticleCard({
   comment_count,
 }) {
   return (
-
     <li className="articlecard">
-      <h2>{title}</h2>
+      <h1>
+        <Link to={`/articles/${article_id}`}>{title}</Link>
+      </h1>
       <dl>
         <dt>ID: {article_id}</dt>
         <dt>Topic: {topic}</dt>

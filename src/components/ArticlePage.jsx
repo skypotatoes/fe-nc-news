@@ -1,15 +1,37 @@
 import { useEffect, useState } from 'react'
 import { getSingleArticle } from './api'
 import { useParams } from 'react-router-dom'
+import ErrorPage from './ErrorPage'
 
 export default function ArticlePage() {
   const { article_id } = useParams()
   const [article, setArticle] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
+
   useEffect(() => {
-    getSingleArticle(article_id).then((SingleArticle) => {
-      setArticle(SingleArticle)
-    })
+    setError(null)
+    setIsLoading(true)
+    getSingleArticle(article_id)
+      .then((SingleArticle) => {
+        setArticle(SingleArticle)
+        setIsLoading(false)
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg },
+            status,
+          },
+        }) => {
+          setError({ msg, status })
+          setIsLoading(false)
+        },
+      )
   }, [article_id])
+  console.log(error)
+  if (isLoading) return <h2>Loading...</h2>
+  if (error) return <ErrorPage status={error.status} msg={error.msg} />
   return (
     <section className="article">
       <h1>{article.title}</h1>
