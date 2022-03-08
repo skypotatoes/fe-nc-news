@@ -1,14 +1,16 @@
 import { getArticles } from './api'
 import ArticleCard from './ArticleCard'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function ArticleList() {
+  const { topic } = useParams()
   const [articles, setArticles] = useState([])
   useEffect(() => {
-    getArticles().then((articleData) => {
+    getArticles(topic).then((articleData) => {
       setArticles(articleData)
     })
-  }, [])
+  }, [topic])
   return (
     <section>
       {articles.map(
