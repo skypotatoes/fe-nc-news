@@ -3,10 +3,20 @@
 }
 
 .articlecard {
+  list-style: none;
   background-color: palegoldenrod;
   width: 50%;
   min-width: 500px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 20px;
+}
+
+.topicslink {
+  margin: 10px;
+  color: darkblue;
+}
+
+.topicsbar {
+  background-color: coral;
 }
