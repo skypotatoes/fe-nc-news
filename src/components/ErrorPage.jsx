@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 
 export default function ErrorPage({ status, msg }) {
+  if (!status) {
+    status = 404
+    msg = 'Path not found'
+  }
   return (
     <main>
       <h2>

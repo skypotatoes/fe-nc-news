@@ -30,7 +30,6 @@ export default function ArticleList() {
       )
   }, [topic])
   if (isLoading) return <h2>Loading...</h2>
-  console.log(error)
   if (error) return <ErrorPage status={error.status} msg={error.msg} />
   return (
     <section>
