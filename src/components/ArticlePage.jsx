@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { getSingleArticle } from './api'
 
 export default function ArticlePage() {
+  const { article_id } = useParams()
+  console.log(article_id)
   const [article, setArticle] = useState([])
   useEffect(() => {
     getSingleArticle(article_id).then((SingleArticle) => {
