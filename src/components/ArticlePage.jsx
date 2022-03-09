@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getSingleArticle } from './api'
+import { getSingleArticle, incrementVote } from './api'
 import { useParams } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
 
@@ -8,6 +8,7 @@ export default function ArticlePage() {
   const [article, setArticle] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [votes, setVotes] = useState(0)
 
   useEffect(() => {
     setError(null)
@@ -15,6 +16,7 @@ export default function ArticlePage() {
     getSingleArticle(article_id)
       .then((SingleArticle) => {
         setArticle(SingleArticle)
+        setVotes(article.votes)
         setIsLoading(false)
       })
       .catch(
@@ -28,8 +30,18 @@ export default function ArticlePage() {
           setIsLoading(false)
         },
       )
-  }, [article_id])
-  console.log(error)
+  }, [article_id, article.votes])
+
+  console.log(votes)
+
+  function handleClick(num) {
+    setVotes((votes) => votes + num)
+    incrementVote(num, article_id).catch((error) => {
+      setVotes((votes) => votes - num)
+      setError('Something went wrong! Please try again')
+    })
+  }
+
   if (isLoading) return <h2>Loading...</h2>
   if (error) return <ErrorPage status={error.status} msg={error.msg} />
   return (
@@ -43,7 +55,23 @@ export default function ArticlePage() {
       </dl>
       <p className="article-body">{article.body}</p>
       <dl>
-        <dt>Votes: {article.votes}</dt>
+        <dt>
+          Votes: {votes}
+          <button
+            onClick={() => {
+              handleClick(1)
+            }}
+          >
+            Upvote
+          </button>
+          <button
+            onClick={() => {
+              handleClick(-1)
+            }}
+          >
+            Downvote
+          </button>
+        </dt>
         <dt>Comment Count: {article.comment_count}</dt>
       </dl>
     </section>
