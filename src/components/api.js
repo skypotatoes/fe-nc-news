@@ -24,6 +24,6 @@ export const getSingleArticle = (article_id) => {
 
 export const incrementVote = (num, article_id) => {
   return axios
-    .patch(`${baseURL}/articles/${article_id}`, { inc_votes: num })
+    .patch(`${baseURL}/articles/100000`, { inc_votes: num })
     .then(({ data }) => data.article)
 }
