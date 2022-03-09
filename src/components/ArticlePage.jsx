@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getSingleArticle } from './api'
 import { useParams } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
+import CommentList from './CommentList'
 
 export default function ArticlePage() {
   const { article_id } = useParams()
@@ -29,7 +30,7 @@ export default function ArticlePage() {
         },
       )
   }, [article_id])
-  console.log(error)
+
   if (isLoading) return <h2>Loading...</h2>
   if (error) return <ErrorPage status={error.status} msg={error.msg} />
   return (
@@ -46,6 +47,9 @@ export default function ArticlePage() {
         <dt>Votes: {article.votes}</dt>
         <dt>Comment Count: {article.comment_count}</dt>
       </dl>
+      <div>
+        <CommentList article_id={article.article_id} />
+      </div>
     </section>
   )
 }
