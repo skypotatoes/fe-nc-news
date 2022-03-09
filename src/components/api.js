@@ -15,14 +15,22 @@ export const getTopics = () => {
     return data.topics
   })
 }
+
 export const getSingleArticle = (article_id) => {
   return axios.get(`${baseURL}/articles/${article_id}`).then(({ data }) => {
     return data.article
   })
 }
 
+
 export const getComments = (article_id) => {
   return axios
     .get(`${baseURL}/articles/${article_id}/comments`)
     .then(({ data }) => data.comments)
+
+export const incrementVote = (num, article_id) => {
+  return axios
+    .patch(`${baseURL}/articles/${article_id}`, { inc_votes: num })
+    .then(({ data }) => data.article)
+
 }
