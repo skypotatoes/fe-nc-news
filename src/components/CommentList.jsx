@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react'
 import { getComments } from './api'
 import CommentCard from './CommentCard'
 
-export default function CommentList(article_id) {
+export default function CommentList({ article_id }) {
   const [comments, setComments] = useState([])
-  console.log(article_id.article_id)
+  const id = article_id
+  console.log(article_id)
   useEffect(() => {
-    getComments(article_id).then((commentsData) => {
+    getComments(id).then((commentsData) => {
       console.log('you are here')
       setComments(commentsData)
     })
