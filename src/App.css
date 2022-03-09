@@ -36,3 +36,32 @@
 .topicsbar {
   background-color: coral;
 }
+
+.comment {
+  background-color: azure;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.comments {
+  background-color: lightpink;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.comment-author {
+  text-align: left;
+}
+
+.comment-body {
+  text-align: left;
+  border-style: solid;
+  padding: 10px;
+
+  border-radius: 20px;
+  background-color: lightcoral;
+}
+.comment-details {
+}

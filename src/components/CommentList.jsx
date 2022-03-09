@@ -14,7 +14,7 @@ export default function CommentList({ article_id }) {
   }, [article_id])
 
   return (
-    <section>
+    <section className="comments">
       Comments:
       {comments.map(({ comment_id, body, author, votes, created_at }) => {
         return (

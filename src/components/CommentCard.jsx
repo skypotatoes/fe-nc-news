@@ -5,5 +5,15 @@ export default function CommentCard({
   votes,
   created_at,
 }) {
-  return <h1>{body}}</h1>
+  return (
+    <div className="comment">
+      <p className="comment-author">{author} commented...</p>
+      <p className="comment-body">{body}</p>
+      <dl classname="comment-details">
+        <dt>ID: {comment_id}</dt>
+        <dt>Votes: {votes}</dt>
+        <dt>Posted at: {created_at}</dt>
+      </dl>
+    </div>
+  )
 }
