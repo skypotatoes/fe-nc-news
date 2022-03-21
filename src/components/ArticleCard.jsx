@@ -18,7 +18,7 @@ export default function ArticleCard({
         <dt>ID: {article_id}</dt>
         <dt>Topic: {topic}</dt>
         <dt>Author: {author}</dt>
-        <dt>Created: {created_at}</dt>
+        <dt>Created: {created_at.slice(0, 9)}</dt>
         <dt>Votes: {votes}</dt>
         <dt>This article has {comment_count} comments</dt>
       </dl>

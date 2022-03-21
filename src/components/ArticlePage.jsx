@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getSingleArticle, incrementVote } from './api'
 import { useParams } from 'react-router-dom'
 import ErrorPage from './ErrorPage'
+import CommentList from './CommentList'
 
 export default function ArticlePage() {
   const { article_id } = useParams()
@@ -33,8 +34,6 @@ export default function ArticlePage() {
       )
   }, [article_id, article.votes])
 
-  console.log(votes)
-
   function handleClick(num) {
     setVotes((votes) => votes + num)
     incrementVote(num, article_id).catch((error) => {
@@ -52,7 +51,7 @@ export default function ArticlePage() {
         <dt>ID: {article.article_id}</dt>
         <dt>{article.topic}</dt>
         <dt>{article.author}</dt>
-        <dt>{article.created_at}</dt>
+        <dt>{article.created_at.slice(0, 9)}</dt>
       </dl>
       <p className="article-body">{article.body}</p>
       <dl>
@@ -76,6 +75,9 @@ export default function ArticlePage() {
         <p>{voteError}</p>
         <dt>Comment Count: {article.comment_count}</dt>
       </dl>
+      <div>
+        <CommentList article_id={article.article_id} />
+      </div>
     </section>
   )
 }
