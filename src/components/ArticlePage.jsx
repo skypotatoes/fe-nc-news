@@ -32,10 +32,7 @@ export default function ArticlePage() {
           setIsLoading(false)
         },
       )
-
-  }, [article_id, article.votes])d])
-
-
+  }, [article_id, article.votes])
 
   function handleClick(num) {
     setVotes((votes) => votes + num)
@@ -44,7 +41,6 @@ export default function ArticlePage() {
       setVoteError('Something went wrong! Please try again')
     })
   }
-
 
   if (isLoading) return <h2>Loading...</h2>
   if (error) return <ErrorPage status={error.status} msg={error.msg} />
