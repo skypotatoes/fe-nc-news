@@ -12,7 +12,7 @@ export default function CommentCard({
       <dl classname="comment-details">
         <dt>ID: {comment_id}</dt>
         <dt>Votes: {votes}</dt>
-        <dt>Posted at: {created_at}</dt>
+        <dt>Posted at: {created_at.slice(0, 9)}</dt>
       </dl>
     </div>
   )

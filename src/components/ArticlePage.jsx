@@ -40,7 +40,7 @@ export default function ArticlePage() {
         <dt>ID: {article.article_id}</dt>
         <dt>{article.topic}</dt>
         <dt>{article.author}</dt>
-        <dt>{article.created_at}</dt>
+        <dt>{article.created_at.slice(0, 9)}</dt>
       </dl>
       <p className="article-body">{article.body}</p>
       <dl>
