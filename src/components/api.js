@@ -32,3 +32,13 @@ export const incrementVote = (num, article_id) => {
     .patch(`${baseURL}/articles/${article_id}`, { inc_votes: num })
     .then(({ data }) => data.article)
 }
+
+export const postComment = (article_id, username, body) => {
+  console.log('article id: ', article_id)
+  console.log('username: ', username)
+  console.log('body: ', body)
+  return axios.post(`${baseURL}/articles/${article_id}/comments`, {
+    username: username,
+    body: body,
+  })
+}
