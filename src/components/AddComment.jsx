@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { postComment } from './api'
 
-export default function AddComment(article_id, comments, setComments) {
+export default function AddComment(props) {
   const [comment, setComment] = useState('')
   // hard-coded a username for now until login is sorted
-  console.log(comments)
 
   function handlePostComment(username, comment) {
-    postComment(article_id.article_id, username, comment)
+    postComment(props.article_id, username, comment)
+    setComment('')
   }
 
   return (
@@ -18,6 +18,7 @@ export default function AddComment(article_id, comments, setComments) {
           <input
             type="text"
             name="comment"
+            value={comment}
             onChange={(event) => {
               setComment(event.target.value)
             }}
@@ -27,7 +28,6 @@ export default function AddComment(article_id, comments, setComments) {
           onClick={(e) => {
             e.preventDefault()
             handlePostComment('tickle122', comment)
-            setComments(comments)
           }}
         >
           Post Comment

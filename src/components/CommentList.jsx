@@ -10,7 +10,7 @@ export default function CommentList({ article_id }) {
     getComments(article_id).then((commentsData) => {
       setComments(commentsData)
     })
-  }, [article_id])
+  }, [article_id, comments])
   console.log(`comments:`, comments)
   return (
     <section className="comments">
