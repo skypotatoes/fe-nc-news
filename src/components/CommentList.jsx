@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getComments } from './api'
 import CommentCard from './CommentCard'
-import PostComment from './PostComment'
+import AddComment from './AddComment'
 
 export default function CommentList({ article_id }) {
   const [comments, setComments] = useState([])
@@ -27,7 +27,11 @@ export default function CommentList({ article_id }) {
           />
         )
       })}
-      <PostComment article_id={article_id} />
+      <AddComment
+        article_id={article_id}
+        comments={comments}
+        setComments={setComments}
+      />
     </section>
   )
 }
