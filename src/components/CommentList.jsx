@@ -11,7 +11,7 @@ export default function CommentList({ article_id }) {
       setComments(commentsData)
     })
   }, [article_id, comments])
-  console.log(`comments:`, comments)
+
   return (
     <section className="comments">
       Comments:

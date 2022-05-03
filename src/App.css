@@ -63,5 +63,15 @@
   border-radius: 20px;
   background-color: lightcoral;
 }
-.comment-details {
+
+.postcomment {
+  border-style: solid;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.postcomment textarea {
+  width: 90%;
+  height: 100px;
+  resize: none;
 }

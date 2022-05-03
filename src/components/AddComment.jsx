@@ -13,17 +13,16 @@ export default function AddComment(props) {
   return (
     <section className="postcomment">
       <form>
-        <label>
-          Your comment:
-          <input
-            type="text"
-            name="comment"
-            value={comment}
-            onChange={(event) => {
-              setComment(event.target.value)
-            }}
-          />
-        </label>
+        <label>Your comment: </label>
+        <textarea
+          type="text"
+          name="comment"
+          value={comment}
+          onChange={(event) => {
+            setComment(event.target.value)
+          }}
+        />
+
         <button
           onClick={(e) => {
             e.preventDefault()
