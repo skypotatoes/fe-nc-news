@@ -34,9 +34,6 @@ export const incrementVote = (num, article_id) => {
 }
 
 export const postComment = (article_id, username, body) => {
-  console.log('article id: ', article_id)
-  console.log('username: ', username)
-  console.log('body: ', body)
   return axios.post(`${baseURL}/articles/${article_id}/comments`, {
     username: username,
     body: body,

@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { postComment } from './api'
 
-export default function PostComment(article_id, comments, setComments) {
+export default function AddComment(article_id, comments, setComments) {
   const [comment, setComment] = useState('')
   // hard-coded a username for now until login is sorted
+  console.log(comments)
 
   function handlePostComment(username, comment) {
     postComment(article_id.article_id, username, comment)
