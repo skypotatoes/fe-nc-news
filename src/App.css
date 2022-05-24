@@ -2,9 +2,33 @@
   text-align: center;
 }
 
+* {
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  list-style-type: none;
+}
+.title a {
+  color: #f7f9fb;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
 .articlecard {
   list-style: none;
-  background-color: palegoldenrod;
+  background-color: #f7f9fb;
   width: 50%;
   min-width: 500px;
   margin-left: auto;
@@ -15,26 +39,38 @@
 }
 
 .article {
+  background-color: #f7f9fb;
+  color: #31708e;
   width: 50%;
   min-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  background-color: palegoldenrod;
+  background-color: f7f9fb;
   border-radius: 20px;
-  padding: 10px;
+  padding: 10px 0px 10px 0px;
+}
+
+.articlecard a:visited {
+  color: #5085a5;
+}
+
+.articlecard a:link {
+  color: #31708e;
 }
 
 .article-body {
   text-align: justify;
+  padding: 0px 10px 0px 10px;
 }
 
 .topicslink {
   margin: 10px;
-  color: darkblue;
+  color: #31708e;
 }
 
 .topicsbar {
-  background-color: coral;
+  background-color: #f7f9fb;
+  margin: 10px;
 }
 
 .comment {
@@ -45,10 +81,8 @@
 }
 
 .comments {
-  background-color: lightpink;
+  background-color: #8fc1e3;
   border-radius: 20px;
-
-  margin: 20px;
 }
 
 .comment-author {
@@ -61,7 +95,7 @@
   padding: 10px;
 
   border-radius: 20px;
-  background-color: lightcoral;
+  background-color: #f7f9fb;
 }
 
 .postcomment {
